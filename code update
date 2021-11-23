@@ -1,0 +1,76 @@
+using UnityEngine;
+using System.Collections;
+
+public class mvp : MonoBehaviour {
+	public GameObject Sphere1;
+	public GameObject Sphere2;
+	public GameObject Sphere3;
+	public GameObject Sphere4;
+	public GameObject remy;
+	public GameObject Drinking;
+	public GameObject Dancing;
+	public GameObject Swimming;
+	public int x=4;
+	// Use this for initialization
+	void Start () {
+		
+		remy.SetActive(true);
+		Drinking.SetActive(false);
+		Dancing.SetActive(false);
+		Swimming.SetActive(false);
+	}
+	
+	
+	// Update is called once per frame
+	void Update () {
+		float distance = Vector3.Distance (Sphere1.transform.position, Sphere2.transform.position);
+		float distances = Vector3.Distance (Sphere1.transform.position, Sphere3.transform.position);
+		float distancess = Vector3.Distance (Sphere1.transform.position, Sphere4.transform.position);
+		
+        if ( 2.0 > distance ) {
+			x=1;
+		} 
+		else if(2.0 > distances){
+			x=2;
+		}
+		else if(2.0 > distancess){
+			x=3;
+		}
+        else { 
+            x=4;   
+        }
+
+	
+	switch (x) 
+		{
+		case 1:
+			Drinking.SetActive(true);
+            remy.SetActive(false);
+            Swimming.SetActive(false);
+            Dancing.SetActive(false);
+			break;
+		case 2:
+			Swimming.SetActive(true);
+            remy.SetActive(false);
+            Dancing.SetActive(false);
+            Drinking.SetActive(false);
+			break;
+		case 3:
+			Dancing.SetActive(true);
+            remy.SetActive(false);
+            Drinking.SetActive(false);
+            Swimming.SetActive(false);
+			break; 
+		case 4:
+		    Dancing.SetActive(false);
+            remy.SetActive(true);
+            Drinking.SetActive(false);
+            Swimming.SetActive(false);
+    		break;	  
+		}
+    }
+}
+///
+			
+		
+/////

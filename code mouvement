@@ -36,6 +36,15 @@ public class mvp : MonoBehaviour {
 		else if(2.0 > distancess){
 			x=3;
 		}
+        else if(2.0 < distance){
+			x=4;
+		}
+        else if(2.0 < distances){
+			x=4;
+		}
+        else if(2.0 < distancess){
+			x=4;
+		}
         else {    
         }
 
@@ -44,15 +53,27 @@ public class mvp : MonoBehaviour {
 		{
 		case 1:
 			Drinking.SetActive(true);
+            remy.SetActive(false);
+            Swimming.SetActive(false);
+            Dancing.SetActive(false);
 			break;
 		case 2:
 			Swimming.SetActive(true);
+            remy.SetActive(false);
+            Dancing.SetActive(false);
+            Drinking.SetActive(false);
 			break;
 		case 3:
 			Dancing.SetActive(true);
+            remy.SetActive(false);
+            Drinking.SetActive(false);
+            Swimming.SetActive(false);
 			break; 
 		case 4:
-		    remy.SetActive(true);
+		    Dancing.SetActive(false);
+            remy.SetActive(true);
+            Drinking.SetActive(false);
+            Swimming.SetActive(false);
     		break;	  
 		}
     }
@@ -61,3 +82,4 @@ public class mvp : MonoBehaviour {
 			
 		
 /////
+
